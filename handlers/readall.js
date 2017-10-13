@@ -1,6 +1,14 @@
  exports.readall = function (article, payload, cb) {
     let result;
     result = sort(payload,article);
+    if(payload.limit!=undefined)
+    {
+        if(payload.page!=undefined) {
+            result = split(article, payload.page, payload.limit);
+        }else{
+        result = split(article,0,payload.limit);
+        }
+    }
     cb(null, result);
 };
 
@@ -63,6 +71,16 @@ function sort(payload, article) {
 function getDate(date) {
     return new Date(date.substr(0,4),date.substr(4,6),date.substr(6,8));
 }
+function split(article, page,limit) {
+    let mass = [];
+    let j = 0;
+    for(let i=limit*page;i<((limit*page)+limit);i++){
+        mass[j] = article[i];
+        j++;
+    }
+    return mass;
+}
+
 function sInc(i,ii) {
     if(getDate(i.date.toString())>getDate(ii.date.toString())){
         return 1;
