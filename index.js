@@ -22,7 +22,7 @@ const handlers = {
 };
 
 let article;
-fs.readFile("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab5\\cwp-5\\task03\\articles.json", "utf-8", function (err, copy) {
+fs.readFile("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab6\\cwp-6\\articles.json", "utf-8", function (err, copy) {
 
         article = JSON.parse(copy);
         const server = http.createServer((req, res) => {
@@ -32,7 +32,7 @@ fs.readFile("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab5\\cwp-5
                    const vat = {
                        code:"400",
                        message:"Request invalid"
-                   }
+                   };
                    res.statusCode = 400;
                    res.setHeader('Content-Type', 'application/json');
                    res.end(JSON.stringify(vat));
@@ -86,13 +86,13 @@ function parseBodyJson(req, cb) {
 
 function log(url, payload, cb) {
     setTimeout(()=>{
-        const read = fs.createReadStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab5\\cwp-5\\task03\\log.log");
+        const read = fs.createReadStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab6\\cwp-6\\log.log");
         let logStr = "Date: "+(new Date().toString())+'\n';
         logStr = logStr+"URL: "+url+'\n';
         logStr = logStr+"body: "+JSON.stringify(payload)+'\n\n\n\n';
         read.read();
         read.on('data',(chunk)=>{
-            const write = fs.createWriteStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab5\\cwp-5\\task03\\log.log");
+            const write = fs.createWriteStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab6\\cwp-6\\log.log");
             write.write(chunk+logStr);
         });
     });
@@ -102,6 +102,15 @@ function log(url, payload, cb) {
 function chekData(url, payload) {
     let key=true;
     switch (url){
+        case    '/api/articles/readall':
+        {
+            if(payload.sortField===undefined){
+                payload.sortField = "date";
+            }
+            if(payload.sortOrder===undefined){
+                payload.sortOrder="desc";
+            }
+        }break;
         case   '/api/comments/delete': {
             if(payload.id===undefined || payload.articleId===undefined){
                 key = false;
