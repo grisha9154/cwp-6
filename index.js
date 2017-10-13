@@ -7,6 +7,7 @@ const update = require('./handlers/update.js');
 const adelete = require('./handlers/adelete.js');
 const ccreate = require('./handlers/ccreate.js');
 const cdelete = require('./handlers/cdelete.js');
+const logHandl = require('./handlers/logHandle.js');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -18,7 +19,8 @@ const handlers = {
     '/api/articles/update':update.update,
     '/api/articles/delete':adelete.adelete,
     '/api/comments/create':ccreate.ccreate,
-    '/api/comments/delete':cdelete.cdelete
+    '/api/comments/delete':cdelete.cdelete,
+    '/api/logs':logHandl.log
 };
 
 let article;
@@ -94,7 +96,19 @@ function log(url, payload, cb) {
         read.on('data',(chunk)=>{
             const write = fs.createWriteStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab6\\cwp-6\\log.log");
             write.write(chunk+logStr);
+            write.close();
+            read.close();
         });
+        const readJSON = fs.createReadStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab6\\cwp-6\\log.json");
+
+        readJSON.on('data',(chunk)=>{
+            let logObj = JSON.parse(chunk);
+            logObj[logObj.length] = {"Date":(new Date().toString()),"URL":url,"Body":payload};
+            const write = fs.createWriteStream("E:\\Univer\\5 семестр\\ПСКП\\PSKP\\Лабы\\lab6\\cwp-6\\log.json");
+            write.write(JSON.stringify(logObj));
+        });
+
+
     });
     cb();
 }

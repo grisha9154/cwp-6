@@ -2,8 +2,7 @@
     let result;
     let lastResalt = {"items":[],"meta":{"page":0,"pages":0,"count":0,"limit":10}};
     result = sort(payload,article);
-    if(payload.limit!=undefined)
-    {
+    if(payload.limit!=undefined) {
         lastResalt.meta.limit = payload.limit;
         if(payload.page!=undefined) {
             result = split(article, payload.page, payload.limit);
@@ -14,6 +13,13 @@
     }else{
         result = split(article,0,10);
     }
+    let buf = [];
+    for(let i=0;result[i]!=undefined;i++){
+        buf[i]=result[i];
+    }
+    result = buf;
+    if((!payload.includeDeps)||payload.includeDeps===undefined)
+       result=getOnlyArt(result);
 
     lastResalt.meta.count = article.length;
     lastResalt.meta.pages = getPages(article.length,lastResalt.meta.limit);
@@ -23,9 +29,29 @@
     cb(null, lastResalt);
 };
 
+function getOnlyArt(article) {
+    let result = [];
+    for(let i=0;i<article.length;i++){
+        let art = {"id":undefined,"title":undefined,"text":undefined,"date":undefined,"author":undefined};
+        art.id = article[i].id;
+        art.title = article[i].title;
+        art.text = article[i].text;
+        art.date = article[i].date;
+        art.author = article[i].author;
+        result[i] = art;
+    }
+    return result;
+}
+
 function getPages(count, limit) {
-    let ost = count%limit;
-    return ((count+ost)/limit);
+    if(count>limit) {
+        let ost = count % limit;
+        return ((count + ost) / limit);
+    }else{
+        let ost = count/limit;
+        let set = 1-ost;
+        return((count/limit)+set);
+    }
 }
 function sort(payload, article) {
     switch (payload.sortField){
