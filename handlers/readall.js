@@ -1,17 +1,32 @@
  exports.readall = function (article, payload, cb) {
     let result;
+    let lastResalt = {"items":[],"meta":{"page":0,"pages":0,"count":0,"limit":10}};
     result = sort(payload,article);
     if(payload.limit!=undefined)
     {
+        lastResalt.meta.limit = payload.limit;
         if(payload.page!=undefined) {
             result = split(article, payload.page, payload.limit);
+            lastResalt.meta.page = payload.page;
         }else{
         result = split(article,0,payload.limit);
         }
+    }else{
+        result = split(article,0,10);
     }
-    cb(null, result);
+
+    lastResalt.meta.count = article.length;
+    lastResalt.meta.pages = getPages(article.length,lastResalt.meta.limit);
+    lastResalt.items = result;
+
+
+    cb(null, lastResalt);
 };
 
+function getPages(count, limit) {
+    let ost = count%limit;
+    return ((count+ost)/limit);
+}
 function sort(payload, article) {
     switch (payload.sortField){
         case "date": {

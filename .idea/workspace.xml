@@ -18,23 +18,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
-              <caret line="83" column="4" lean-forward="false" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+              <caret line="56" column="12" lean-forward="false" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readall.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readall.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/readall.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="229">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
-                <element signature="e#428#702#0" expanded="false" />
+                <element signature="e#511#556#0" expanded="false" />
+                <element signature="e#910#1184#0" expanded="false" />
                 <element signature="n#!!block;n#sInc#0" expanded="false" />
                 <element signature="n#!!block;n#sDesc#0" expanded="false" />
                 <element signature="n#!!block;n#sIncId#0" expanded="false" />
@@ -194,12 +195,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507903177209</updated>
-      <workItem from="1507903179297" duration="13291000" />
+      <workItem from="1507903179297" duration="14445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13291000" />
+    <option name="totallyTimeSpent" value="14445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -233,34 +234,41 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/handlers/readall.js</url>
-          <line>130</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/handlers/readall.js</url>
-          <line>37</line>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/handlers/readall.js</url>
-          <line>3</line>
+          <line>4</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/handlers/readall.js</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/handlers/readall.js</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
-        <watch expression="i" language="JavaScript" />
-        <watch expression="ii" language="JavaScript" />
-        <watch expression="article" language="JavaScript" />
-        <watch expression="payload.limit" language="JavaScript" />
-        <watch expression="payload.page" language="JavaScript" />
-        <watch expression="mass" language="JavaScript" />
-        <watch expression="(limit*page)+limit" language="JavaScript" />
+        <watch expression="lastResalt" language="JavaScript" />
+        <watch expression="(count+ost)/limit" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>
@@ -289,20 +297,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="83" column="4" lean-forward="false" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handlers/readall.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="229">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#428#702#0" expanded="false" />
+            <element signature="e#511#556#0" expanded="false" />
+            <element signature="e#910#1184#0" expanded="false" />
             <element signature="n#!!block;n#sInc#0" expanded="false" />
             <element signature="n#!!block;n#sDesc#0" expanded="false" />
             <element signature="n#!!block;n#sIncId#0" expanded="false" />
@@ -312,6 +313,14 @@
             <element signature="n#!!block;n#sIncAuthor#0" expanded="false" />
             <element signature="n#!!block;n#sDescAuthor#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="56" column="12" lean-forward="false" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
