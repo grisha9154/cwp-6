@@ -1,0 +1,48 @@
+Date: Mon Oct 09 2017 08:16:06 GMT+0300 (RTZ 2 (зима))
+URL: /api/comments/create
+body: {"articleId":0,"text":"koko","date":20170606,"author":"user"}
+
+
+
+Date: Mon Oct 09 2017 08:16:06 GMT+0300 (RTZ 2 (зима))
+URL: /api/comments/create
+body: {"articleId":0,"text":"koko","date":20170606,"author":"user"}
+
+
+
+Date: Mon Oct 09 2017 08:16:27 GMT+0300 (RTZ 2 (зима))
+URL: /api/comments/delete
+body: {"id":0,"articleId":0,"text":"koko","date":20170606,"author":"user"}
+
+
+
+Date: Mon Oct 09 2017 08:16:38 GMT+0300 (RTZ 2 (зима))
+URL: /api/articles/readall
+body: {"id":0,"articleId":0,"text":"koko","date":20170606,"author":"user"}
+
+
+
+Date: Mon Oct 09 2017 08:17:39 GMT+0300 (RTZ 2 (зима))
+URL: /api/articles/create
+body: {"title":"qwe","text":"koko","date":20170606,"author":"user","comments":[]}
+
+
+
+Date: Mon Oct 09 2017 08:18:02 GMT+0300 (RTZ 2 (зима))
+URL: /api/articles/delete
+body: {"id":4,"title":"qwe","text":"koko","date":20170606,"author":"user","comments":[]}
+
+
+
+Date: Mon Oct 09 2017 08:18:15 GMT+0300 (RTZ 2 (зима))
+URL: /api/articles/update
+body: {"id":3,"title":"qwe","text":"koko","date":20170606,"author":"user","comments":[]}
+
+
+
+Date: Mon Oct 09 2017 08:18:27 GMT+0300 (RTZ 2 (зима))
+URL: /api/articles/readall
+body: {"id":3,"title":"qwe","text":"koko","date":20170606,"author":"user","comments":[]}
+
+
+
